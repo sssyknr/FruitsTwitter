@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_home"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="ホーム" />
+        <item
+            android:id="@+id/menu_account_add"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="アカウントの追加" />
+        <item
+            android:id="@+id/menu_account_remove"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="アカウントの削除" />
+        <item
+            android:id="@+id/menu_about_app"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="このアプリについて" />
+        <item
+            android:id="@+id/menu_setting"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="設定" />
+    </group>
+</menu>

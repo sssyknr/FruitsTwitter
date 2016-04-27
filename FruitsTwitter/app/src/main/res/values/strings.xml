@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FruitsTwitter</string>
+
+    <!-- Twitter4j -->
+    <string name="twitter_consumer_key">X6CTdvausafOTsK6bPMFcvlDT</string>
+    <string name="twitter_consumer_secret">X8o3TlWbrfR5H8uodsw3BSdnxa9KC7zgDSRCFDjdLPyQe2o4W7</string>
+    <string name="twitter_auth_callback">fruitstwitter://twitterlogin</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

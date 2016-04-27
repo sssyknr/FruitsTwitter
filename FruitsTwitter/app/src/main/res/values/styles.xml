@@ -1,0 +1,89 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!-- strawberryテーマ -->
+    <style name="themeStrawberry" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="toolbarBackground">@color/strawberry3</item>
+        <item name="textColor">@color/white</item>
+        <item name="tabOn">@color/strawberry6</item>
+        <item name="tabOff">@color/strawberry7</item>
+        <item name="bg">@color/strawberry4</item>
+        <item name="splashBg">@color/strawberry3</item>
+        <item name="splashImg">@drawable/strawberry</item>
+    </style>
+
+    <!-- grapeテーマ -->
+    <style name="themeGrape" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="toolbarBackground">@color/grape6</item>
+        <item name="textColor">@color/white</item>
+        <item name="tabOn">@color/grape7</item>
+        <item name="tabOff">@color/grape4</item>
+        <item name="bg">@color/grape2</item>
+        <item name="splashBg">@color/grape6</item>
+        <item name="splashImg">@drawable/grape</item>
+    </style>
+
+    <!-- grapefruitテーマ -->
+    <style name="themeGrapefruit" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="toolbarBackground">@color/grapefruit1</item>
+        <item name="textColor">@color/white</item>
+        <item name="tabOn">@color/grapefruit2</item>
+        <item name="tabOff">@color/grapefruit3</item>
+        <item name="bg">@color/grapefruit5</item>
+        <item name="splashBg">@color/grapefruit1</item>
+        <item name="splashImg">@drawable/grapefruit</item>
+    </style>
+
+    <!-- melonテーマ -->
+    <style name="themeMelon" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="toolbarBackground">@color/melon2</item>
+        <item name="textColor">@color/white</item>
+        <item name="tabOn">@color/melon3</item>
+        <item name="tabOff">@color/melon5</item>
+        <item name="bg">@color/melon6</item>
+        <item name="splashBg">@color/melon2</item>
+        <item name="splashImg">@drawable/melon</item>
+    </style>
+
+    <!-- pineテーマ -->
+    <style name="themePine" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="toolbarBackground">@color/pine1</item>
+        <item name="textColor">@color/white</item>
+        <item name="tabOn">@color/pine4</item>
+        <item name="tabOff">@color/pine7</item>
+        <item name="bg">@color/pine2</item>
+        <item name="splashBg">@color/pine1</item>
+        <item name="splashImg">@drawable/pine</item>
+    </style>
+
+    <!-- WaterMelonテーマ -->
+    <style name="themeWaterMelon" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="toolbarBackground">@color/watermelon2</item>
+        <item name="textColor">@color/black</item>
+        <item name="tabOn">@color/watermelon7</item>
+        <item name="tabOff">@color/watermelon3</item>
+        <item name="bg">@color/watermelon5</item>
+        <item name="splashBg">@color/watermelon2</item>
+        <item name="splashImg">@drawable/watermelon</item>
+    </style>
+
+    <!-- peachテーマ -->
+    <style name="themePeach" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="toolbarBackground">@color/peach2</item>
+        <item name="textColor">@color/black</item>
+        <item name="tabOn">@color/peach6</item>
+        <item name="tabOff">@color/peach7</item>
+        <item name="bg">@color/peach5</item>
+        <item name="splashBg">@color/peach2</item>
+        <item name="splashImg">@drawable/peach</item>
+    </style>
+
+    <!-- ProgressDialog -->
+    <style name="ProgressDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@color/transparency</item>
+    </style>
+</resources>

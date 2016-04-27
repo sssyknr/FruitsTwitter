@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Theme">
+        <!-- ツールバー背景色 -->
+        <attr name="toolbarBackground" format="color" />
+        <!-- テキスト色 -->
+        <attr name="textColor" format="color" />
+        <!-- タブ通常 -->
+        <attr name="tabOff" format="color" />
+        <!-- タブ選択 -->
+        <attr name="tabOn" format="color" />
+        <!-- 背景色 -->
+        <attr name="bg" format="color" />
+        <!-- スプラッシュ背景色 -->
+        <attr name="splashBg" format="color" />
+        <!-- スプラッシュ画像 -->
+        <attr name="splashImg" format="reference" />
+    </declare-styleable>
+</resources>

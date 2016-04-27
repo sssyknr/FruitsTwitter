@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 通常色 -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="grey">#999999</color>
+    <color name="transparency">#00000000</color>
+
+    <!--strawberry-->
+    <color name="strawberry1">#de631f</color>
+    <color name="strawberry2">#c45c34</color>
+    <color name="strawberry3">#c51e30</color>
+    <color name="strawberry4">#e75f70</color>
+    <color name="strawberry5">#be1c79</color>
+    <color name="strawberry6">#4a594b</color>
+    <color name="strawberry7">#9db020</color>
+
+    <!-- grape -->
+    <color name="grape1">#024461</color>
+    <color name="grape2">#979e3a</color>
+    <color name="grape3">#533c96</color>
+    <color name="grape4">#32326e</color>
+    <color name="grape5">#4b307d</color>
+    <color name="grape6">#6f3272</color>
+    <color name="grape7">#db0176</color>
+
+    <!-- grapefruit -->
+    <color name="grapefruit1">#facf01</color>
+    <color name="grapefruit2">#e4e889</color>
+    <color name="grapefruit3">#979e3a</color>
+    <color name="grapefruit4">#ec8866</color>
+    <color name="grapefruit5">#e06021</color>
+    <color name="grapefruit6">#68443e</color>
+    <color name="grapefruit7">#aabcd3</color>
+
+    <!-- melon -->
+    <color name="melon1">#feef00</color>
+    <color name="melon2">#9bb017</color>
+    <color name="melon3">#d3d957</color>
+    <color name="melon4">#008a50</color>
+    <color name="melon5">#018740</color>
+    <color name="melon6">#de631f</color>
+    <color name="melon7">#0073b6</color>
+
+    <!-- pine -->
+    <color name="pine1">#c29d46</color>
+    <color name="pine2">#fad208</color>
+    <color name="pine3">#fcf003</color>
+    <color name="pine4">#e4e988</color>
+    <color name="pine5">#969b35</color>
+    <color name="pine6">#48594f</color>
+    <color name="pine7">#425043</color>
+
+    <!-- watermelon -->
+    <color name="watermelon1">#d6d858</color>
+    <color name="watermelon2">#018a51</color>
+    <color name="watermelon3">#008644</color>
+    <color name="watermelon4">#e75f6b</color>
+    <color name="watermelon5">#be1b32</color>
+    <color name="watermelon6">#ea8a64</color>
+    <color name="watermelon7">#211715</color>
+
+    <!-- peach -->
+    <color name="peach1">#E4007F</color>
+    <color name="peach2">#EB6EA5</color>
+    <color name="peach3">#F7C9DD</color>
+    <color name="peach4">#FFFCDB</color>
+    <color name="peach5">#FBDAC8</color>
+    <color name="peach6">#F5B090</color>
+    <color name="peach7">#EC6D56</color>
+
+</resources>
