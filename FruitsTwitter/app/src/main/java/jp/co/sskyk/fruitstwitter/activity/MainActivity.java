@@ -78,9 +78,10 @@ public class MainActivity extends BaseActivity implements android.support.v4.app
     private void initNavigationView() {
         drawerLayout = (DrawerLayout) findViewById(R.id.activity_main_navigation_drawer);
         NavigationView navigationView = (NavigationView) findViewById(R.id.activity_main_navigation_view);
-        accountImage = (ImageView) navigationView.findViewById(R.id.drawer_account_image);
-        accountName = (TextView) navigationView.findViewById(R.id.drawer_account_name);
-        accountId = (TextView) navigationView.findViewById(R.id.drawer_account_id);
+        View header = navigationView.getHeaderView(0);
+        accountImage = (ImageView) header.findViewById(R.id.drawer_account_image);
+        accountName = (TextView) header.findViewById(R.id.drawer_account_name);
+        accountId = (TextView) header.findViewById(R.id.drawer_account_id);
         // TODO: 複数アカウント対応
         {
 

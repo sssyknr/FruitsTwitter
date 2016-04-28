@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import jp.co.sskyk.fruitstwitter.fragment.adapter.BaseListFragment;
 import twitter4j.ResponseList;
 import twitter4j.Status;
 

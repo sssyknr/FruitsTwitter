@@ -1,6 +1,7 @@
 package jp.co.sskyk.fruitstwitter.fragment.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import jp.co.sskyk.fruitstwitter.Common.Constants;
 import jp.co.sskyk.fruitstwitter.R;
+import jp.co.sskyk.fruitstwitter.activity.ImageViewActivity;
 import jp.co.sskyk.fruitstwitter.utils.DateUtil;
 import twitter4j.ExtendedMediaEntity;
 import twitter4j.ResponseList;
@@ -52,7 +55,7 @@ public class TimelineListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Status item = (Status) getItem(position);
-        ViewHolder viewHolder;
+        final ViewHolder viewHolder;
         if (convertView == null) {
             convertView = View.inflate(context, R.layout.adapter_timeline, null);
             viewHolder = new ViewHolder();
@@ -87,23 +90,21 @@ public class TimelineListAdapter extends BaseAdapter {
         // 画像表示・URL表示削除
         ExtendedMediaEntity[] mediaEntities = item.getExtendedMediaEntities();
         String tmp = item.getText();
-        int imageCount = 1;
-        LinearLayout layout = null;
         viewHolder.imageContainer.removeAllViews();
         for (ExtendedMediaEntity entity : mediaEntities) {
-            if (imageCount == 1) {
-                // 2の倍数で新しいレイアウト
-                // TODO: 複数画像があるとき
-                layout = new LinearLayout(context);
-                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                layout.setOrientation(LinearLayout.HORIZONTAL);
-                layout.setLayoutParams(params);
-                viewHolder.imageContainer.addView(layout);
-                imageCount = 1 - imageCount;
-            }
             tmp = tmp.replace(entity.getText(), "");
-            ImageView imageView = (ImageView) View.inflate(context, R.layout.inflate_timeline_image, layout).findViewById(R.id.adapter_timeline_upload_image);
-            Picasso.with(context).load(entity.getMediaURL()).into(imageView);
+            ImageView imageView = (ImageView) View.inflate(context, R.layout.inflate_timeline_image, viewHolder.imageContainer).findViewById(R.id.adapter_timeline_upload_image);
+            final String url = entity.getMediaURL();
+            Picasso.with(context).load(url).into(imageView);
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // 画像クリック
+                    Intent intent = new Intent(context, ImageViewActivity.class);
+                    intent.putExtra(Constants.IntentKey.IMAGE_URL, url);
+                    context.startActivity(intent);
+                }
+            });
         }
         // URL置き換え
         URLEntity[] urlEntities = item.getURLEntities();
@@ -141,17 +142,6 @@ public class TimelineListAdapter extends BaseAdapter {
             return null;
         }
         return list.get(last - 1);
-    }
-
-    public void removeFirstItem() {
-        list.remove(0);
-    }
-
-    public void removeLastItem() {
-        int last = getCount();
-        if (last != 0) {
-            list.remove(last - 1);
-        }
     }
 
     private class ViewHolder {

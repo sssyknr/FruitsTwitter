@@ -1,4 +1,4 @@
-package jp.co.sskyk.fruitstwitter.fragment.adapter;
+package jp.co.sskyk.fruitstwitter.fragment;
 
 import android.app.Activity;
 import android.os.AsyncTask;

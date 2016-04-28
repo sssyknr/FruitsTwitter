@@ -3,14 +3,11 @@ package jp.co.sskyk.fruitstwitter.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import jp.co.sskyk.fruitstwitter.fragment.adapter.BaseListFragment;
 import jp.co.sskyk.fruitstwitter.fragment.adapter.TimelineListAdapter;
-import jp.co.sskyk.fruitstwitter.utils.DateUtil;
 import jp.co.sskyk.fruitstwitter.utils.DialogUtil;
 import twitter4j.Paging;
 import twitter4j.ResponseList;
