@@ -24,6 +24,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'org.twitter4j:twitter4j-core:4.0.4'
     compile 'com.squareup.picasso:picasso:2.3.3'
-    compile 'com.github.chrisbanes.actionbarpulltorefresh:library:0.9.9'
     compile 'com.android.support:design:22.2.1'
+    compile 'com.navercorp.pulltorefresh:library:3.2.0@aar'
 }

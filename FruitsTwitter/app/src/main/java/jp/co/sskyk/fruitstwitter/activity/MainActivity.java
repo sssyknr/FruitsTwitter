@@ -14,9 +14,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import org.w3c.dom.Text;
-
 import jp.co.sskyk.fruitstwitter.R;
+import jp.co.sskyk.fruitstwitter.fragment.NotificationFragment;
 import jp.co.sskyk.fruitstwitter.fragment.TimelineFragment;
 import jp.co.sskyk.fruitstwitter.task.AccountInfoAsyncTask;
 import twitter4j.User;
@@ -58,7 +57,7 @@ public class MainActivity extends BaseActivity implements android.support.v4.app
 
         View view2 = newTabImage(R.drawable.ic_feedback_black_24dp);
         TabHost.TabSpec spec2 = tabHost.newTabSpec("タブ2").setIndicator(view2);
-        tabHost.addTab(spec2, TimelineFragment.class, null);
+        tabHost.addTab(spec2, NotificationFragment.class, null);
 
         View view3 = newTabImage(R.drawable.ic_mail_outline_black_24dp);
         TabHost.TabSpec spec3 = tabHost.newTabSpec("タブ3").setIndicator(view3);
