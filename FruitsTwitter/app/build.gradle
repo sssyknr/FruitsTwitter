@@ -27,4 +27,5 @@ dependencies {
     compile 'com.android.support:design:23.3.0'
     compile 'com.navercorp.pulltorefresh:library:3.2.0@aar'
     compile 'it.sephiroth.android.library.imagezoom:imagezoom:2.2.5'
+    compile 'com.felipecsl:gifimageview:2.0.0'
 }

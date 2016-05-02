@@ -2,15 +2,21 @@ package jp.co.sskyk.fruitstwitter.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.media.Image;
 import android.media.MediaScannerConnection;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
+import com.felipecsl.gifimageview.library.GifImageView;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -45,7 +51,9 @@ public class ImageViewActivity extends BaseActivity {
             // intentがある
             imageView = (ImageView) findViewById(R.id.activity_image_view_image);
             // 画像を取得
-            Picasso.with(this).load(intent.getStringExtra(Constants.IntentKey.IMAGE_URL)).into(imageView);
+            String path = intent.getStringExtra(Constants.IntentKey.IMAGE_URL);
+            Picasso.with(this).load(path).into(imageView);
+
             // imageView長押しで画像保存
             registerForContextMenu(imageView);
         }

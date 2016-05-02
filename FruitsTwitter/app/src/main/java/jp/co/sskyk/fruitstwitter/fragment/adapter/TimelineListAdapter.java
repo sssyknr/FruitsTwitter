@@ -2,13 +2,18 @@ package jp.co.sskyk.fruitstwitter.fragment.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import com.squareup.picasso.Picasso;
 
@@ -17,6 +22,7 @@ import java.util.ArrayList;
 import jp.co.sskyk.fruitstwitter.Common.Constants;
 import jp.co.sskyk.fruitstwitter.R;
 import jp.co.sskyk.fruitstwitter.activity.ImageViewActivity;
+import jp.co.sskyk.fruitstwitter.activity.VideoActivity;
 import jp.co.sskyk.fruitstwitter.utils.DateUtil;
 import twitter4j.ExtendedMediaEntity;
 import twitter4j.ResponseList;
@@ -91,20 +97,15 @@ public class TimelineListAdapter extends BaseAdapter {
         ExtendedMediaEntity[] mediaEntities = item.getExtendedMediaEntities();
         String tmp = item.getText();
         viewHolder.imageContainer.removeAllViews();
-        for (ExtendedMediaEntity entity : mediaEntities) {
+        for (final ExtendedMediaEntity entity : mediaEntities) {
+            if (Constants.MediaEntityType.TYPE_PHOTO.equals(entity.getType())) {
+                // 画像
+                setImage(viewHolder, entity);
+            } else {
+                // 動画
+                setVideo(viewHolder, entity);
+            }
             tmp = tmp.replace(entity.getText(), "");
-            ImageView imageView = (ImageView) View.inflate(context, R.layout.inflate_timeline_image, viewHolder.imageContainer).findViewById(R.id.adapter_timeline_upload_image);
-            final String url = entity.getMediaURL();
-            Picasso.with(context).load(url).into(imageView);
-            imageView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // 画像クリック
-                    Intent intent = new Intent(context, ImageViewActivity.class);
-                    intent.putExtra(Constants.IntentKey.IMAGE_URL, url);
-                    context.startActivity(intent);
-                }
-            });
         }
         // URL置き換え
         URLEntity[] urlEntities = item.getURLEntities();
@@ -133,6 +134,9 @@ public class TimelineListAdapter extends BaseAdapter {
     }
 
     public Status getFirstItem() {
+        if (list == null || list.size() == 0) {
+            return null;
+        }
         return list.get(0);
     }
 
@@ -142,6 +146,54 @@ public class TimelineListAdapter extends BaseAdapter {
             return null;
         }
         return list.get(last - 1);
+    }
+
+    /**
+     * 静止画
+     */
+    private void setImage(final ViewHolder viewHolder, final ExtendedMediaEntity entity) {
+        View view = View.inflate(context, R.layout.inflate_timeline_image, viewHolder.imageContainer);
+
+        // サムネイル
+        ImageView imageView = (ImageView) view.findViewById(R.id.adapter_timeline_upload_image);
+        Picasso.with(context).load(entity.getMediaURL()).into(imageView);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = entity.getMediaURL();
+                Intent intent = new Intent(context, ImageViewActivity.class);
+                intent.putExtra(Constants.IntentKey.IMAGE_URL, url);
+                context.startActivity(intent);
+            }
+        });
+
+        // 再生マークアイコン
+        ImageView playImage = (ImageView) view.findViewById(R.id.adapter_timeline_upload_image_play);
+        playImage.setVisibility(View.GONE);
+
+    }
+
+    private void setVideo(final ViewHolder viewHolder, final ExtendedMediaEntity entity) {
+        View view = View.inflate(context, R.layout.inflate_timeline_image, viewHolder.imageContainer);
+        // サムネイル
+        ImageView imageView = (ImageView) view.findViewById(R.id.adapter_timeline_upload_image);
+        Picasso.with(context).load(entity.getMediaURL()).into(imageView);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "";
+                for (ExtendedMediaEntity.Variant variant : entity.getVideoVariants()) {
+                    url = variant.getUrl();
+                }
+                Intent intent = new Intent(context, VideoActivity.class);
+                intent.putExtra(Constants.IntentKey.IMAGE_URL, url);
+                context.startActivity(intent);
+            }
+        });
+
+        // 再生マークアイコン
+        ImageView playImage = (ImageView) view.findViewById(R.id.adapter_timeline_upload_image_play);
+        playImage.setVisibility(View.VISIBLE);
     }
 
     private class ViewHolder {
